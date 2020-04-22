@@ -7,6 +7,8 @@
     "no-shadow": 1,
     "react/prop-types": false,
     "react-hooks/exhaustive-deps": 2,
+    "react/destructuring-assignment": 1,
+    "react/no-unused-state": 1,
     "jsx-a11y/no-onchange": 2,
     "jsx-a11y/label-has-for": 0,
     "react/jsx-key": 2,
