@@ -17,5 +17,6 @@
         "printWidth": 80
       }
     ]
-  }
+  },
+  "parser": "babel-eslint"
 }
