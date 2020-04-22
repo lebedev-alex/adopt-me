@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
-import { Link } from '@reach/router';
+import { Link, Redirect } from '@reach/router';
 
 class ErrorBoundary extends Component {
   state = {
-    hasError: false
+    hasError: false,
+    redirect: false
   };
 
   static getDerivedStateFromError() {
     return { hasError: true };
+  }
+
+  componentDidUpdate() {
+    if (this.state.hasError) {
+      setTimeout(() => {
+        this.setState({ redirect: true });
+      }, 5000);
+    }
   }
 
   componentDidCatch(error, info) {
@@ -15,6 +24,10 @@ class ErrorBoundary extends Component {
   }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/" />;
+    }
+
     if (this.state.hasError) {
       return (
         <h1>
@@ -23,6 +36,7 @@ class ErrorBoundary extends Component {
         </h1>
       );
     }
+
     return this.props.children;
   }
 }
