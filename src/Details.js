@@ -1,5 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/no-unused-state */
 import React from 'react';
 import pet from '@frontendmasters/pet';
 
